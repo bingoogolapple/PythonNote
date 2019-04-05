@@ -4,6 +4,12 @@
 # 创建时间:2017/12/15
 # 描述:
 
+"""
+多行注释
+多行注释
+多行注释
+"""
+
 name1 = 1
 print(type(name1))  # <class 'int'>
 name2 = name1
