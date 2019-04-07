@@ -4,17 +4,22 @@
 # 创建时间:2019-04-02
 # 描述:
 
-print('请输入参数：')
-# a = input()
-a = 1
-print('参数为', a, type(a))
-a = int(a)
+import random
 
-if a == 1:
+# 包含开始和结尾
+a = random.randint(1, 3)
+b = random.randint(1, 3)
+print(a, b)
+
+if ((a == 1 and b == 1)
+        or (a == 2 and b == 2)
+        or (a == 3 and b == 3)
+        or (a == 4 and b == 4)
+        or (a == 5 and b == 5)):
     print('aa')
-elif a == 2:
+elif a == 1 or b == 2:
     print('bb')
-elif a == 3:
+elif a == 3 and b == 1:
     print('cc')
 elif a == 4:
     # 空语句/占位语句

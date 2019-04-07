@@ -4,6 +4,8 @@
 # 创建时间:2019-04-01
 # 描述:
 
+# 只有 True 和 False。其他类型值非 0 或长度非 0 即真，否则为 False
+
 a = True
 print(a)  # True
 a = False

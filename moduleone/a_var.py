@@ -5,9 +5,8 @@
 # 描述:
 
 """
-多行注释
-多行注释
-多行注释
+Python3.x 中只有 int 类型，Python 2.x 中有 int 和 long
+Python 没有常量
 """
 
 name1 = 1
