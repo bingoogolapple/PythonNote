@@ -10,12 +10,24 @@ def test1():
 
 
 def test2(p1, p2):
+    """方法描述
+
+    :param p1:参数1
+    :param p2:参数2
+    :return:返回值为None
+    """
     print('p1 = ', p1, 'p2 = ', p2)
     p1 + p2
 
 
 # 仅仅位置参数
 def test3(p1, p2):
+    """方法描述
+
+    :param p1:参数1
+    :param p2:参数2
+    :return:参数1和参数2的和
+    """
     print('p1 = ', p1, 'p2 = ', p2)
     return p1 + p2
 

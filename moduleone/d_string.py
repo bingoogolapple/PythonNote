@@ -69,6 +69,8 @@ def format_print():
     print('名称 = %s，单价 = %d，重量 = %f，总价 = %f' % (name, price, weight, price * weight))
     # 名称 = 哈哈，单价 = 11，重量 = 22.00，总价 = 242.000
     print('名称 = %s，单价 = %d，重量 = %.2f，总价 = %.3f' % (name, price, weight, price * weight))
+    tuple_params = (name, price, weight, price * weight)  # % 后面其实就是元祖类型的参数
+    print('名称 = %s，单价 = %d，重量 = %.2f，总价 = %.3f' % tuple_params)
 
 
 format_print()
