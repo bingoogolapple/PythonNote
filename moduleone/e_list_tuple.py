@@ -123,6 +123,34 @@ def test_list3():
     print()
 
 
+def test_slice():
+    print('----- test_slice -----')
+    # 列表或元祖[开始索引:结束索引:步长]，不包含结束索引
+    list_one = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    # 1. 截取从 2 ~ 5 位置 的元素
+    print(list_one[2:6])  # [2, 3, 4, 5]
+    # 2. 截取从 2 ~ `末尾` 的元素
+    print(list_one[2:])  # [2, 3, 4, 5, 6, 7, 8, 9]
+    # 3. 截取从 `开始` ~ 5 位置 的元素
+    print(list_one[:6])  # [0, 1, 2, 3, 4, 5]
+    # 4. 截取完整的元素
+    print(list_one[:])  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    # 5. 从开始位置，每隔一个元素截取元素
+    print(list_one[::2])  # [0, 2, 4, 6, 8]
+    # 6. 从索引 1 开始，每隔一个取一个
+    print(list_one[1::2])  # [1, 3, 5, 7, 9]
+
+    # 倒序切片，-1 表示倒数第一个元素
+    print(list_one[-1])  # 9
+    # 7. 截取从 2 ~ `末尾 - 1` 的元素
+    print(list_one[2:-1])  # [2, 3, 4, 5, 6, 7, 8]
+    # 8. 截取元素末尾两个元素
+    print(list_one[-2:])  # [8, 9]
+    # 9. 元素的逆序（面试题），从最后一个元素开始往前
+    print(list_one[-1::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+    print(list_one[::-1])  # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+
 def test_list_tuple():
     print('----- test_list_tuple -----')
     list_one = ['B', "bingo", 'G', 'googol', 'A', 'apple']
@@ -133,11 +161,18 @@ def test_list_tuple():
     tmp = list(tmp)
     print(type(tmp))  # <class 'list'>
 
+    print([1, 2] + [3, 4])  # [1, 2, 3, 4]
+    print((1, 2) + (3, 4))  # (1, 2, 3, 4)
+    print(["BGA"] * 4)  # ['BGA', 'BGA', 'BGA', 'BGA']
+    print(("BGA",) * 4)  # ('BGA', 'BGA', 'BGA', 'BGA')
+    print((1, 2, 3) < (2, 2, 3))  # True
 
-test_tuple1()
-test_tuple2()
-test_tuple3()
-test_list1()
-test_list2()
-test_list3()
+
+# test_tuple1()
+# test_tuple2()
+# test_tuple3()
+# test_list1()
+# test_list2()
+# test_list3()
+# test_slice()
 test_list_tuple()

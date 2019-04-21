@@ -105,7 +105,8 @@ def test_dict2():
 
 def test_dict3():
     print('----- test_dict3 -----')
-    dict1 = {'short': 'BGA', 'long': 'bingoogolapple', 'B': 'bingo', 'G': 'googol', 'A': 'apple'}
+    keyword = 'haha'
+    dict1 = {'haha': 'BGA', 'long': 'bingoogolapple', 'B': 'bingo', 'G': 'googol', 'A': 'apple'}
     '''
     short BGA
     long bingoogolapple
@@ -115,6 +116,11 @@ def test_dict3():
     '''
     for key in dict1:
         print(key, dict1[key])
+        if key == keyword:
+            print('找到了')
+            break
+    else:
+        print('没找到')
     '''
     short BGA
     long bingoogolapple
@@ -171,7 +177,7 @@ def test_dict4():
     print(dict2)  # {'short': 'BGA', 'long': 'bingoogolapple', 'B': '修改后', 'G': 'googol', 'A': 'apple'}
     print(dict1.__contains__('short'))  # True
     print(dict1.__contains__('short1'))  # False
-    print('short' in dict1)  # False
+    print('short' in dict1)  # True
 
 
 test_dict1()
