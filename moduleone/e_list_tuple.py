@@ -167,6 +167,12 @@ def test_list_tuple():
     print(("BGA",) * 4)  # ('BGA', 'BGA', 'BGA', 'BGA')
     print((1, 2, 3) < (2, 2, 3))  # True
 
+    list_two = [1, 2, 3]
+    list_three = [1, 2, 3]
+    # == 比较值，is 比较内存地址
+    print(list_two == list_three)  # True
+    print(list_two is list_three)  # False
+
 
 # test_tuple1()
 # test_tuple2()
