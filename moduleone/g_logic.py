@@ -6,6 +6,13 @@
 
 import random
 
+condition = False
+# 使用 not 关键字取非
+if not condition:
+    print('aaaaaa')
+else:
+    print('bbbbbbbbbb')
+
 # 包含开始和结尾
 a = random.randint(1, 3)
 b = random.randint(1, 3)

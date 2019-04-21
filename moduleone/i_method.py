@@ -45,6 +45,7 @@ def test5(p1, p2=3):
 
 
 # *变量名 定义可变长参数，其实是个 tuple。必须放到最后
+# def test6(p1, p2, *args):
 def test6(p1, p2, *istuple):
     print('p1 = ', p1, 'p2 = ', p2, 'istuple = ', istuple)
     result = p1 + p2
@@ -54,6 +55,7 @@ def test6(p1, p2, *istuple):
 
 
 # **变量名 定义关键字参数，其实是个 dict。必须放到最后
+# def test7(p1, p2, **kwargs):
 def test7(p1, p2, **isdict):
     print('p1 = ', p1, 'p2 = ', p2, 'isdict = ', isdict)
 
@@ -104,28 +106,46 @@ test8(1, 2)
 test8(1, 2, 3)
 test8(1, 2, 3, b=4)
 test8(1, 2, *[1, 2, 3], **{'b': 1, 'g': 2})
+# 用一个 * 号进行元祖、列表拆包，用两个 * 号进行字典拆包
 test8(1, 2, bga='bga', *[1, 2, 3], **{'b': 1, 'g': 2})
 test8(1, 2, bga='bga', *[1, 2, 3], agb='agb', **{'b': 1, 'g': 2})
 
-print('----- 作用域 -----')
 
-num = 10  # 全局变量
-
-
-def test9():
-    print(num)  # 10
+# 用一个 * 号进行元祖、列表拆包，用两个 * 号进行字典拆包
+def test9(*args, **kwargs):
+    print(args)
+    print(kwargs)
 
 
-test9()
+# 需要将一个元组变量/字典变量传递给函数对应的参数
+gl_tuple = (1, 2, 3)
+gl_dict = {"name": "小明", "age": 18}
+'''
+会把 gl_tuple 和 gl_dict 作为元组传递给 args
+((1, 2, 3), {'name': '小明', 'age': 18})
+{}
+'''
+test9(gl_tuple, gl_dict)
+
+'''
+会把 gl_tuple 传递给 args，把 gl_dict 传递给 kwargs
+(1, 2, 3)
+{'name': '小明', 'age': 18}
+'''
+test9(*gl_tuple, **gl_dict)
+
+print('----- 递归累加 -----')
 
 
-def test10():
-    num = 5
-    print(num)  # 5
+def recursion_sum_numbers(num):
+    if num == 1:
+        return 1
+
+    # 函数内部的核心算法就是 两个数字的相加
+    return num + recursion_sum_numbers(num - 1)
 
 
-test10()
-print(num)  # 10
+print(recursion_sum_numbers(3))
 
 print('----- lambda表达式，原型为【lambda 参数:操作(参数)】 -----')
 
