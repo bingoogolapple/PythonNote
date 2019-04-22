@@ -11,10 +11,11 @@ class Student(Human):
 
     def __init__(self, school, name, age):
         self.school = school
-        # 不建议用这种
+        # 不建议用这种。Python 2.x 不支持 super() 时使用，Python 3.x 中建议使用 super(). 调用父类方法
         # Human.__init__(self, name, age)
-        # 建议用这种方式调父类的构造方法
-        super(Student, self).__init__(name, age)
+
+        # super(Student, self).__init__(name, age)
+        super().__init__(name, age)  # 使用 super(). 调用原本在父类中封装的方法
         print('执行了 Student 的 __init__ 方法')  # 执行了 Student 的 __init__ 方法 我是全局变量
 
         # 两个下划线 __ 开头的变量为私有变量
@@ -28,8 +29,11 @@ class Student(Human):
 
     def test1(self):
         print('子类 test1')
-        # Human.test1(self)  # 调用父类方法，Python 2.x 不支持 super 时使用，Python 3.x 中建议使用 super 调用父类方法
-        super(Student, self).test1()
+        # 不建议用这种。Python 2.x 不支持 super() 时使用，Python 3.x 中建议使用 super(). 调用父类方法
+        # Human.test1(self)
+
+        # super(Student, self).test1()
+        super().test1()  # 使用 super(). 调用原本在父类中封装的方法
 
 
 def oop_test0():

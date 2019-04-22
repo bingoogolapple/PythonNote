@@ -2,13 +2,13 @@
 # -*- coding:utf-8 -*-
 # 作者:王浩 邮件:bingoogolapple@gmail.com
 # 创建时间:2019-04-21
-# 描述:Python 支持多重继承
+# 描述:Python 支持多重继承「多重继承时不是所有父类的 __init__ 方法都会执行」
 
 
 class A:
-
     def __init__(self):
         self.name = 'A'
+        print('A --- __init__ 方法')
 
     def test(self):
         print("A --- test 方法")
@@ -20,6 +20,7 @@ class A:
 class B:
     def __init__(self):
         self.name = 'B'
+        print('B --- __init__ 方法')
 
     def test(self):
         print("B --- test 方法")
@@ -41,7 +42,7 @@ class D(B, A):
 # __mro__ 确定 C 类对象调用方法的顺序，从左往右找第一个存在的
 print(C.__mro__)  # (<class '__main__.C'>, <class '__main__.A'>, <class '__main__.B'>, <class 'object'>)
 # 创建子类对象
-c = C()
+c = C()  # A --- __init__ 方法
 c.test()  # A --- test 方法
 c.demo()  # A --- demo 方法
 print(c.name)  # A
@@ -49,7 +50,7 @@ print(c.name)  # A
 # __mro__ 确定 D 类对象调用方法的顺序，从左往右找第一个存在的
 print(D.__mro__)  # (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.A'>, <class 'object'>)
 # 创建子类对象
-d = D()
+d = D()  # B --- __init__ 方法
 d.test()  # B --- test 方法
 d.demo()  # B --- demo 方法
 print(d.name)  # B
