@@ -6,13 +6,13 @@
 
 import tt.tt_one as newname
 
-import moduleone.tt_two
-import moduletwo.tt_three
+import basic.tt_two
+import othermodule.tt_three
 
 # print(tt.tt_one.name)
 print(newname.name)
-print(moduleone.tt_two.name)
-print(moduletwo.tt_three.name)
+print(basic.tt_two.name)
+print(othermodule.tt_three.name)
 
 from tt_two import name
 
@@ -22,8 +22,8 @@ from tt import tt_one
 
 print(tt_one.name)
 
-from moduletwo.tt_four import *
-from moduletwo.tt_five import *
+from othermodule.tt_four import *
+from othermodule.tt_five import *
 
 print(four_one)
 print(four_two)
@@ -33,16 +33,17 @@ print(five_one)
 print(five_two)
 # print(five_three)
 
-from moduletwo.tt_six import six_one, six_two
+from othermodule.tt_six import six_one, six_two
 
 print(six_one, six_two)
 
 # 可以通过小括号包裹来换行
-from moduletwo.tt_seven import (seven_one,
-                                seven_two)
+from othermodule.tt_seven import (seven_one,
+                                  seven_two)
 
 print(seven_one, seven_two)
 
-import moduleone
-print(moduleone.sys.path)
-print(moduleone.datetime.date)
+import basic
+
+print(basic.sys.path)
+print(basic.datetime.date)
