@@ -15,8 +15,10 @@ print(basic.tt_two.name)
 print(othermodule.tt_three.name)
 
 from tt_two import name
+print('重命名前的 name', name)
 
-print(name)
+from tt_two import name as new_name
+print('重命名后的 new_name', new_name)
 
 from tt import tt_one
 
@@ -45,5 +47,7 @@ print(seven_one, seven_two)
 
 import basic
 
+print(basic.tt_two.__file__)  # /Users/wanghao/git/PyCharm/PythonNote/basic/tt_two.py
+print(basic.__file__)  # /Users/wanghao/git/PyCharm/PythonNote/basic/__init__.py
 print(basic.sys.path)
 print(basic.datetime.date)
