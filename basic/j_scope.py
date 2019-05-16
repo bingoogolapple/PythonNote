@@ -2,7 +2,9 @@
 # -*- coding:utf-8 -*-
 # 作者:王浩 邮件:bingoogolapple@gmail.com
 # 创建时间:2019-04-21
-# 描述:
+# 描述:在一个函数中对全局变量进行修改的时候，到底是否需要使用 global 进行说明，要看是否对全局变量的指向进行了修改
+# 如果修改了指向，即让全局变量指向一个新的地方，那么必须使用 global
+# 如果仅仅修改了指向的空间中的数据，此时不用必须使用 global
 
 print('----- 作用域 -----')
 
@@ -19,6 +21,7 @@ def test_scope1():
 
 # 建议定义全局变量时使用「g_」或「gl_」开头
 gl_title = 'BGA'
+nums = [11, 22]
 test_scope1()
 name = 'bingoogolapple'
 
@@ -39,9 +42,12 @@ def test_scope3():
     num = 5
     print(num)  # 5
 
+    nums.append(33)  # 修改引用里的值，并不是修改 nums 的指向
+
 
 test_scope3()
 print(num)  # 5
+print(nums)  # [11, 22, 33]
 
 
 def test_scope4(num_list):
